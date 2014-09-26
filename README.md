@@ -1,6 +1,8 @@
 MarkdownifyBundle
 =================
 
+[![Build Status](https://travis-ci.org/pkruithof/MarkdownifyBundle.svg)](https://travis-ci.org/pkruithof/MarkdownifyBundle)
+
 Provides Symfony2 integration for the Markdownify/Markdownify_Extra scripts.
 
 The original Markdownify from [Milian Wolff](http://milianw.de/projects/markdownify/)
