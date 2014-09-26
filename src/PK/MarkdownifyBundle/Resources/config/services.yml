@@ -1,0 +1,13 @@
+parameters:
+  pk.markdownify.class: Markdownify\ConverterExtra
+
+services:
+  pk.markdownify:
+    class: %pk.markdownify.class%
+    arguments:
+      linksAfterEachParagraph: 0
+      bodyWidth: false
+      keepHTML: false
+
+  markdownify:
+    alias: pk.markdownify
