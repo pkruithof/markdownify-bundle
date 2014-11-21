@@ -35,11 +35,31 @@ and update:
 php composer.phar update "pk/markdownify-bundle"
 ```
 
-###  AppKernel.php
+### AppKernel.php
 
 Add to `app/AppKernel.php`:
-```
+```php
 new PK\MarkdownifyBundle\PKMarkdownifyBundle()
+```
+
+### Configuration
+
+The configuration is optional as all options have defaults.
+
+```yaml
+pk_markdownify:
+  # Where to put the link references:
+  # * 0 for after the content (default)
+  # * 1 for after each paragraph
+  # * 2 for in the paragraph, directly after the link text
+  link_position: 0
+
+  # When larger than the minimal width (25), the body will be
+  # wrapped to this width. Set to false to disable wrapping (default)
+  body_width: false
+
+  # Whether to keep html tags which cannot be converted to markdown
+  keep_html: false
 ```
 
 ## Usage
