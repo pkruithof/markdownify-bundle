@@ -16,7 +16,7 @@ install:
   - composer self-update
 
 before_script:
-  - composer install --no-interaction
+  - composer update --no-interaction
 
 script:
   - ./vendor/bin/phpunit
