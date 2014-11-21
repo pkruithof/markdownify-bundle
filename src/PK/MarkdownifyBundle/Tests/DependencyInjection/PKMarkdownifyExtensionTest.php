@@ -10,7 +10,7 @@ class PKMarkdownifyExtensionTest extends \PHPUnit_Framework_TestCase
 {
     public function testParameters()
     {
-        $container = $this->getContainer();
+        $container = $this->getContainer('config.yml');
 
         $this->assertTrue($container->hasParameter('pk.markdownify.class'));
         $this->assertTrue($container->hasDefinition('pk.markdownify'));
@@ -22,17 +22,31 @@ class PKMarkdownifyExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('pk.markdownify', $container->getAlias('markdownify'));
     }
 
+    public function testArguments()
+    {
+        $container = $this->getContainer('args.yml');
+
+        $def = $container->getDefinition('pk.markdownify');
+
+        $this->assertEquals(2, $def->getArgument('linksAfterEachParagraph'));
+        $this->assertEquals(60, $def->getArgument('bodyWidth'));
+        $this->assertEquals(false, $def->getArgument('keepHTML'));
+    }
+
     /**
+     * @param string $file
+     *
      * @return ContainerBuilder
      */
-    protected function getContainer()
+    protected function getContainer($file)
     {
         $container = new ContainerBuilder(new ParameterBag(array('kernel.debug' => true)));
         $container->registerExtension(new PKMarkdownifyExtension());
 
         $locator = new FileLocator(__DIR__ . '/Fixtures');
         $loader  = new YamlFileLoader($container, $locator);
-        $loader->load('config.yml');
+
+        $loader->load($file);
         $container->compile();
 
         return $container;

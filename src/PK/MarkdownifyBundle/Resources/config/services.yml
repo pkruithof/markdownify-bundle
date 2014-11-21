@@ -5,9 +5,9 @@ services:
   pk.markdownify:
     class: %pk.markdownify.class%
     arguments:
-      linksAfterEachParagraph: 0
-      bodyWidth: false
-      keepHTML: false
+      linksAfterEachParagraph: %pk.markdownify.link_position%
+      bodyWidth: %pk.markdownify.body_width%
+      keepHTML: %pk.markdownify.keep_html%
 
   markdownify:
     alias: pk.markdownify
