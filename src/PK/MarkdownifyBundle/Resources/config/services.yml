@@ -1,13 +1,7 @@
-parameters:
-  pk.markdownify.class: Markdownify\ConverterExtra
-
 services:
-  pk.markdownify:
-    class: %pk.markdownify.class%
-    arguments:
-      linksAfterEachParagraph: %pk.markdownify.link_position%
-      bodyWidth: %pk.markdownify.body_width%
-      keepHTML: %pk.markdownify.keep_html%
-
   markdownify:
-    alias: pk.markdownify
+    class: 'Markdownify\ConverterExtra'
+    arguments:
+      linksAfterEachParagraph: '%markdownify.link_position%'
+      bodyWidth: '%markdownify.body_width%'
+      keepHTML: '%markdownify.keep_html%'

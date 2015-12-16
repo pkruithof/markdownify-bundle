@@ -1,6 +1,19 @@
 CHANGELOG
 =========
 
+## v4.0.0
+
+### Changes
+
+* Added Symfony 3.0 support
+
+### Breaking changes
+
+* Bumped PHP requirement to 5.5.9
+* Bumped Symfony requirement to 2.7
+* Dropped `pk.markdownify` service in favour of `markdownify`
+
+
 ## v3.0.0
 
 ### Changes

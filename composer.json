@@ -4,7 +4,7 @@
   "description": "Symfony2 bundle that integrates the Markdownify class as a service",
   "keywords": ["markdown", "markdownify"],
   "license": "MIT",
-  "homepage": "http://github.com/pkruithof/MarkdownifyBundle",
+  "homepage": "http://github.com/pkruithof/markdownify-bundle",
   "authors": [
     {
       "name": "Peter Kruithof",
@@ -12,16 +12,21 @@
     }
   ],
   "require": {
-    "php": ">=5.3.3",
-    "symfony/framework-bundle": "~2.3",
-    "pixel418/markdownify": "~2.1"
+    "php": ">=5.5.9",
+    "symfony/framework-bundle": "^2.7|^3.0",
+    "pixel418/markdownify": "^2.1"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.0"
+    "phpunit/phpunit": "^4.5"
   },
   "autoload": {
     "psr-4": {
       "PK\\MarkdownifyBundle\\": "src/PK/MarkdownifyBundle/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PK\\MarkdownifyBundle\\Tests\\": "tests/PK/MarkdownifyBundle/"
     }
   }
 }
