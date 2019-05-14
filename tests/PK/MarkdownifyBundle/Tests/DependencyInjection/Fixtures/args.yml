@@ -1,4 +1,4 @@
 pk_markdownify:
-  - 2
-  - 60
-  - false
+  link_position: 2
+  body_width: 60
+  keep_html: false
