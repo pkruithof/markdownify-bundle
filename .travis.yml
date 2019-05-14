@@ -37,4 +37,4 @@ script:
   - ./vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
-  - if [[ "$SYMFONY_VERSION" == "3.0.*" ]]; then wget https://scrutinizer-ci.com/ocular.phar; php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
+  - if [[ "$SYMFONY_VERSION" == "3.4.*" ]]; then wget https://scrutinizer-ci.com/ocular.phar; php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
