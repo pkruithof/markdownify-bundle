@@ -20,15 +20,18 @@ class PKMarkdownifyExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(ConverterExtra::class, $def->getClass());
     }
 
+    /**
+     * Assert the arguments are passed through from the service definition yml file.
+     */
     public function testArguments()
     {
         $container = $this->getContainer('args.yml');
 
         $def = $container->getDefinition('markdownify');
 
-        $this->assertEquals(2, $def->getArgument('linksAfterEachParagraph'));
-        $this->assertEquals(60, $def->getArgument('bodyWidth'));
-        $this->assertEquals(false, $def->getArgument('keepHTML'));
+        $this->assertEquals(2, $def->getArgument(0)); // linkPosition
+        $this->assertEquals(60, $def->getArgument(1)); // bodyWidth
+        $this->assertEquals(false, $def->getArgument(2)); // keepHtml
     }
 
     /**
