@@ -2,6 +2,6 @@ services:
   markdownify:
     class: 'Markdownify\ConverterExtra'
     arguments:
-      linksAfterEachParagraph: '%markdownify.link_position%'
-      bodyWidth: '%markdownify.body_width%'
-      keepHTML: '%markdownify.keep_html%'
+      - '%markdownify.link_position%'
+      - '%markdownify.body_width%'
+      - '%markdownify.keep_html%'

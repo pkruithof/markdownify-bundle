@@ -21,6 +21,8 @@ matrix:
       env: SYMFONY_VERSION=2.8.*
     - php: 5.6
       env: SYMFONY_VERSION=3.0.*
+    - php: 5.6
+      env: SYMFONY_VERSION=3.4.*
   allow_failures:
     - php: hhvm
 
@@ -29,10 +31,10 @@ install:
   - if [ "$SYMFONY_VERSION" != "" ]; then composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update; fi;
 
 before_script:
-  - composer update --prefer-dist --no-interaction
+  - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer update --prefer-dist --no-interaction
 
 script:
   - ./vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
-  - if [[ "$SYMFONY_VERSION" == "3.0.*" ]]; then wget https://scrutinizer-ci.com/ocular.phar; php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
+  - if [[ "$SYMFONY_VERSION" == "3.4.*" ]]; then wget https://scrutinizer-ci.com/ocular.phar; php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
