@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+## v4.1.0
+
+### Changes
+
+* Added Symfony 3.4 support
+
+
 ## v4.0.0
 
 ### Changes
