@@ -1,11 +1,23 @@
-MarkdownifyBundle
-=================
+# NOTE: This project is deprecated and will be archived!
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
+When Symfony was in version 2 (and later 3) this bundle made a lot more sense 
+than it does now. With the introduction of Symfony 4, bundles become less and
+less important. Furthermore, this bundle mainly adds a service, which you can
+easily configure in your Symfony application. You don't need a bundle for that.
+
+For these reasons, the project is deprecated and will be archived in some time.
+If you are using this, please consider removing it and configure the service 
+like this:
+
+```yaml
+services:
+  markdownify:
+    class: Markdownify\ConverterExtra
+    arguments: [] # optionally specify some arguments    
+```
+
+
+# Original readme:
 
 Provides Symfony integration for the Markdownify/Markdownify_Extra scripts.
 
